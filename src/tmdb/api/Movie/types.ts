@@ -3,3 +3,9 @@ export interface MovieGetDetailsDTO {
     language?: string
     appendToResponse?: string
 }
+
+export interface MovieGetRecommendationsDTO {
+    movieId: number
+    language?: string
+    page?: number
+}
