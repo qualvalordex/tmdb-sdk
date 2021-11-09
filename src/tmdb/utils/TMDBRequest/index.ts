@@ -8,7 +8,7 @@ export abstract class TMDBRequest {
 
     constructor(apiKey: string) {
         this.apiKey = apiKey
-        this.baseUrl = ''
+        this.baseUrl = 'https://api.themoviedb.org/3'
     }
 
     protected movieGetDetails(params: MovieGetDetailsDTO) {
@@ -17,6 +17,7 @@ export abstract class TMDBRequest {
 
     private async request(url: string, params: any) {
         return request({
+            method: 'GET',
             baseURL: this.baseUrl,
             url,
             params: {
