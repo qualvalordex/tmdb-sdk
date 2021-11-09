@@ -1,5 +1,6 @@
 import request, { AxiosPromise } from 'axios'
 import { MovieGetDetailsDTO, MovieGetRecommendationsDTO } from '../../api/Movie/types'
+import { SearchMovieDTO } from '../../api/Search/types'
 
 export abstract class TMDBRequest {
     
@@ -17,6 +18,10 @@ export abstract class TMDBRequest {
 
     protected movieGetRecommendations(params: MovieGetRecommendationsDTO) {
         return this.request(`/movie/${params.movieId}/recommendations`, params)
+    }
+
+    protected searchMovie(params: SearchMovieDTO) {
+        return this.request('/search/movie', params)
     }
 
     private async request(url: string, params: any) {
