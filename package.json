@@ -1,7 +1,8 @@
 {
   "name": "tmdb-sdk",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
+  "main": "build/index.js",
+  "types": "build/index.d.ts",
   "license": "MIT",
   "devDependencies": {
     "@types/axios": "^0.14.0",
