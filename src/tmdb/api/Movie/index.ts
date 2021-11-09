@@ -1,5 +1,5 @@
 import { TMDBRequest } from "../../utils"
-import { MovieGetDetailsDTO, MovieGetRecommendationsDTO } from "./types"
+import { MovieGetDetailsDTO, MovieGetRecommendationsDTO, MovieGetAlternativeTitlesDTO } from "./types"
 
 export class Movie extends TMDBRequest {
 
@@ -9,6 +9,14 @@ export class Movie extends TMDBRequest {
 
     public async details(params: MovieGetDetailsDTO) {
         const { status, data } = await this.movieGetDetails(params)
+        return {
+            status,
+            data
+        }
+    }
+
+    public async alternativeTypes(params: MovieGetAlternativeTitlesDTO) {
+        const { status, data } = await this.movieGetRecommendations(params)
         return {
             status,
             data

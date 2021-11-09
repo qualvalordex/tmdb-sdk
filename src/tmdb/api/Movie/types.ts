@@ -9,3 +9,8 @@ export interface MovieGetRecommendationsDTO {
     language?: string
     page?: number
 }
+
+export interface MovieGetAlternativeTitlesDTO {
+    movieId: number
+    country?: string
+}

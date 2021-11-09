@@ -1,5 +1,5 @@
 import request, { AxiosPromise } from 'axios'
-import { MovieGetDetailsDTO, MovieGetRecommendationsDTO } from '../../api/Movie/types'
+import { MovieGetDetailsDTO, MovieGetRecommendationsDTO, MovieGetAlternativeTitlesDTO } from '../../api/Movie/types'
 import { SearchMovieDTO } from '../../api/Search/types'
 
 export abstract class TMDBRequest {
@@ -14,6 +14,10 @@ export abstract class TMDBRequest {
 
     protected movieGetDetails(params: MovieGetDetailsDTO) {
         return this.request(`/movie/${params.movieId}`, params)
+    }
+
+    protected movieGetAlternativeTitles(params: MovieGetAlternativeTitlesDTO) {
+        return this.request(`/movie/${params.movieId}/alternative_titles`, params)
     }
 
     protected movieGetRecommendations(params: MovieGetRecommendationsDTO) {
