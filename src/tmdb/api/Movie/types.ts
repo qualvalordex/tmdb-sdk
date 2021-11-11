@@ -14,6 +14,12 @@ export interface MovieGetCreditsDTO {
     language?: string
 }
 
+export interface MovieGetImagesDTO {
+    movieId: number
+    language?: string
+    include_image_language?: string
+}
+
 export interface MovieGetRecommendationsDTO {
     movieId: number
     language?: string
