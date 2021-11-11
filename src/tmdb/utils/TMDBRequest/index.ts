@@ -7,7 +7,7 @@ import {
   MovieGetImagesDTO,
   MovieGetReviewsDTO,
 } from "../../api/Movie/types";
-import { SearchMovieDTO } from "../../api/Search/types";
+import { SearchMovieDTO, SearchPersonDTO } from "../../api/Search/types";
 
 export abstract class TMDBRequest {
   private apiKey: string;
@@ -44,6 +44,10 @@ export abstract class TMDBRequest {
 
   protected searchMovie(params: SearchMovieDTO) {
     return this.request("/search/movie", params);
+  }
+
+  protected searchPerson(params: SearchPersonDTO) {
+    return this.request("/search/person", params);
   }
 
   private async request(url: string, params: any) {
