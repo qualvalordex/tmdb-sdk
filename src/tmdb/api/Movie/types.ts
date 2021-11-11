@@ -25,3 +25,9 @@ export interface MovieGetRecommendationsDTO {
     language?: string
     page?: number
 }
+
+export interface MovieGetReviewsDTO {
+    movieId: number
+    language?: string
+    page?: number
+}
