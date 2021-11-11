@@ -4,13 +4,18 @@ export interface MovieGetDetailsDTO {
     appendToResponse?: string
 }
 
+export interface MovieGetAlternativeTitlesDTO {
+    movieId: number
+    country?: string
+}
+
+export interface MovieGetCreditsDTO {
+    movieId: number
+    language?: string
+}
+
 export interface MovieGetRecommendationsDTO {
     movieId: number
     language?: string
     page?: number
-}
-
-export interface MovieGetAlternativeTitlesDTO {
-    movieId: number
-    country?: string
 }
